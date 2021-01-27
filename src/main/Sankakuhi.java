@@ -8,12 +8,12 @@ public class Sankakuhi {
 	double[] type_d = new double[2],angle_d = new double[4];
 	int type_i[] = new int[2],angle_i[] = new int[4],rand;
 	String[] type = {"sin","cos","tan","cosec","sec","cot"},
-			sin = {"0",null,"1/2","1/ã2","ã3/2",null,"1"},
-			cos = {"1",null,"ã3/2","1/ã2","1/2",null,"0"},
-			tan = {"0",null,"1/ã3","1","ã3",null,"‚È‚µ"},
-			cosec = {"‚È‚µ",null,"2","ã2","2/ã3",null,"1"},
-			sec = {"1",null,"2/ã3","ã2","2",null,"‚È‚µ"},
-			cot = {"‚È‚µ",null,"ã3","1","1/ã3",null,"0"};
+			sin = {"0",null,"1/2","1/âˆš2","âˆš3/2",null,"1"},
+			cos = {"1",null,"âˆš3/2","1/âˆš2","1/2",null,"0"},
+			tan = {"0",null,"1/âˆš3","1","âˆš3",null,"ãªã—"},
+			cosec = {"ãªã—",null,"2","âˆš2","2/âˆš3",null,"1"},
+			sec = {"1",null,"2/âˆš3","âˆš2","2",null,"ãªã—"},
+			cot = {"ãªã—",null,"âˆš3","1","1/âˆš3",null,"0"};
 
 	
 	Sankakuhi() {
@@ -87,26 +87,26 @@ public class Sankakuhi {
 		int minus_i = 0;
 
 		
-		//360‹ˆÈ“à‚É‚·‚é
-		if(angle >= 360) {
+		//360Â°ä»¥å†…ã«ã™ã‚‹
+		while(angle >= 360) {
 			angle-=360;
 		}
 		while(angle < 0) {
 			angle+=360;
 		}
 		
-		//180‹ˆÈ“à‚É‚·‚é
+		//180Â°ä»¥å†…ã«ã™ã‚‹
 		if(angle >= 180) {
 			angle-=180;
-			if(type != this.type[2] && type != this.type[5]) {	//tan,cotˆÈŠO
+			if(type != this.type[2] && type != this.type[5]) {	//tan,cotä»¥å¤–
 				minus_i += 1;
 			}
 		}
 		
-		//90‹ˆÈ“à‚É‚·‚é
+		//90Â°ä»¥å†…ã«ã™ã‚‹
 		if(angle > 90) {
 			angle = 180-angle;
-			if(type != this.type[0] && type != this.type[3]) {	//sin,cosecˆÈŠO
+			if(type != this.type[0] && type != this.type[3]) {	//sin,cosecä»¥å¤–
 				minus_i += 1;
 			}
 		}
